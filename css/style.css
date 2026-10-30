@@ -66,3 +66,9 @@ button{
     cursor: pointer;
     margin-bottom: 1rem;
 }
+
+.daftar{
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+}

@@ -30,11 +30,11 @@
                 <option>laki-laki</option>
                 <option>perempuan</option>
             </select>
-            
+
             <label>Alamat</label>
             <input required type="text" placeholder="Masukkan alamat">
 
-            <button type="submit" id="daftar" >Daftar</button>
+            <button type="submit" id="daftar">Daftar</button>
         </form>
     </div>
 
@@ -42,9 +42,13 @@
     <script>
         let daftar = document.getElementById("formDaftar")
 
-        daftar.addEventListener("submit", function(event) {
+        daftar.addEventListener("submit", function (event) {
             event.preventDefault()
-            window.location.href = "dashboard.html"
+            alert("Berhasil daftar")
+
+            window.location.href ="index.html"
+
+            daftar.reset()
 
         })
 

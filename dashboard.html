@@ -1,35 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="css/dashboard.css">
+
+    <style>
+        :root {
+            --blue-dark: rgb(31, 34, 46);
+            --blue-light: rgb(51, 56, 71);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: var(--blue-light);
+            color: rgb(205, 207, 211);
+        }
+
+        .sidebar {
+            border-right: 1px solid rgba(186, 186, 186, 0.353);
+            background-color: var(--blue-dark);
+            height: 100vh;
+            width: 18rem;
+            position: fixed;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+
+            transition: .5s ease;
+        }
+
+
+        .sidebar h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            padding-left: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        hr {
+            width: 15rem;
+            height: 1px;
+            margin: 20px auto;
+            background-color: rgba(186, 186, 186, 0.353);
+            border: none;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: rgb(205, 207, 211);
+            font-size: 1.1rem;
+            padding: 1rem;
+            width: 95%;
+            border-radius: 0.2rem;
+            cursor: pointer;
+
+            &:hover {
+                background-color: var(--blue-light);
+                transition: .1s ease;
+            }
+        }
+
+        .konten {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 70vh;
+            gap: 1rem;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .buttons button {
+            background-color: var(--blue-dark);
+            display: block;
+            color: whitesmoke;
+            padding: 1rem;
+            border: none;
+            border-radius: 0.3rem;
+            font-size: 1.2rem;
+            box-shadow: 3px 3px 8px rgba(143, 143, 143, 0.185);
+            cursor: pointer;
+        }
+
+    </style>
 </head>
+
 <body>
-    <header class="navbar">
-        <div class="nav-container">
-            <h2>myDashboard</h2>
-            <navbar class="nav-links">
-                <a href="#">home</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
-            </navbar>
-        </div>
-    </header>
+    <div id="sidebar" class="sidebar">
+        <h2>MyDashboard</h2>
+        <hr>
+        <a  onclick="ubahHalaman('Beranda'); return false;">Home</a>
+        <a  onclick="ubahHalaman('Profil'); return false;">Profil</a>
+        <a  onclick="ubahHalaman('Galeri'); return false;"> Galler</a>
+        <a  onclick="ubahHalaman('kontak'); return false;"> Contact</a>
+    </div>
 
-    <section class="hero-section">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1>INI DASHBOARD</h1>
-                <p>Ini adalah dashboard yang akan terlihat setelah berhasil login.</p>
-            </div>
+    <div class="konten">
+        <h1 id="judul">INI DASHBOARD</h1>
+        <p id="isi">ini adalah halaman dashboard setelah login</p>
 
-            <div class="hero-logout">
-                <p>ingin Logout?<a href="index.html">Logout</a></p>
-            </div>
+        <div class="buttons">
+            <button onclick="ubahTulisan()">
+                ubah tulisan
+            </button>
+            <button onclick="toggleMenu()">
+                Menu
+            </button>
         </div>
-    </section>
-    
+    </div>
+
+
+
+    <script src="js/dashboard.js"></script>
 </body>
+
 </html>

@@ -9,28 +9,14 @@
     console.log("Username:", user)
 
     if (user == "user" && pw == "123") {
-        alert("Login berhasil!Selamat welcome " + user)
+        alert("Login berhasil! Selamat welcome " + user)
         pesan.innerHTML = "Selamat datang le"
+        window.location.href = "dashboard.html"
+
     } else {
         alert("username atau pw salah")
         pesan.innerHTML = "periksa lagi datanya"
     }
 
+    
  }
-
-
-
-
-// let btnLogin =  document.querySelector("btnLogin")
-
-
-// function canLogin() {
-//     let user = document.getElementById("username").value
-//     let pw = document.getElementById("password").value
-
-//     if (user == "user" && pw == "123") {
-//         alert("Login berhasil.Selamat welcome" + user)
-//     } else {
-//         alert("login gagal")
-//     }
-// }

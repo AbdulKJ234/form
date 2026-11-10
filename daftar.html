@@ -12,27 +12,11 @@
     <div class="form-box">
         <h2>Form pendaftaran siswa</h2>
         <form id="formDaftar">
-            <label>nama Lengkap</label>
-            <input required type="text" placeholder="masukkan nama">
+            <label>Ussername</label>
+            <input id="username" required type="text" placeholder="masukkan nama">
 
-            <label>NIS</label>
-            <input required type="text" placeholder="masukkan NIS">
-
-            <label>Kelas</label>
-            <select>
-                <option>X</option>
-                <option>XI</option>
-                <option>XII</option>
-            </select>
-
-            <label>Jenis Kelamin</label>
-            <select>
-                <option>laki-laki</option>
-                <option>perempuan</option>
-            </select>
-
-            <label>Alamat</label>
-            <input required type="text" placeholder="Masukkan alamat">
+            <label>password</label>
+            <input id="pw" required type="password" placeholder="masukkan Password">
 
             <button type="submit" id="daftar">Daftar</button>
         </form>
@@ -44,8 +28,31 @@
 
         daftar.addEventListener("submit", function (event) {
             event.preventDefault()
-            alert("Berhasil daftar")
 
+            const username = document.getElementById("username").value
+            const pw = document.getElementById("pw").value
+
+            //Ambil daftar user yang sudah ada di localStorage (jika belum ada, buat array kosong)
+            const daftarUser = JSON.parse(localStorage.getItem('users')) || [];
+            
+            //Cek apakah username sudah dipakai
+            const userAda = daftarUser.some(user => user.username == username)
+
+            if (userAda) {
+                alert("Username sudah terdaftar! Gunakan username lain")
+                return;
+            }
+
+            const userBaru = {
+                username : username,
+                password : pw
+            };
+
+            daftarUser.push(userBaru)
+            localStorage.setItem('users', JSON.stringify(daftarUser))
+
+
+            alert("Berhasil daftar")
             window.location.href ="index.html"
 
             daftar.reset()

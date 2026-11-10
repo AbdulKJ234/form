@@ -8,8 +8,8 @@
 
     <style>
         :root {
-            --blue-dark: rgb(31, 34, 46);
-            --blue-light: rgb(51, 56, 71);
+            --blue-dark: #202435;
+            --blue-light: #2e3547;
         }
 
         * {
@@ -49,10 +49,9 @@
             width: 15rem;
             height: 1px;
             margin: 20px auto;
-            background-color: rgba(186, 186, 186, 0.353);
+            background-color: rgba(186, 186, 186, 0.452);
             border: none;
         }
-
         .sidebar a {
             text-decoration: none;
             color: rgb(205, 207, 211);
@@ -93,6 +92,7 @@
             font-size: 1.2rem;
             box-shadow: 3px 3px 8px rgba(143, 143, 143, 0.185);
             cursor: pointer;
+
         }
 
     </style>
@@ -102,10 +102,10 @@
     <div id="sidebar" class="sidebar">
         <h2>MyDashboard</h2>
         <hr>
-        <a  onclick="ubahHalaman('Beranda'); return false;">Home</a>
-        <a  onclick="ubahHalaman('Profil'); return false;">Profil</a>
-        <a  onclick="ubahHalaman('Galeri'); return false;"> Galler</a>
-        <a  onclick="ubahHalaman('kontak'); return false;"> Contact</a>
+        <a onclick="ubahHalaman('Beranda'); return false;">Home</a>
+        <a onclick="ubahHalaman('Profil'); return false;">Profil</a>
+        <a onclick="ubahHalaman('Galeri'); return false;"> Galler</a>
+        <a onclick="ubahHalaman('kontak'); return false;"> Contact</a>
     </div>
 
     <div class="konten">

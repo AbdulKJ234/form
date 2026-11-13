@@ -22,44 +22,20 @@
         </form>
     </div>
 
-
     <script>
         let daftar = document.getElementById("formDaftar")
 
         daftar.addEventListener("submit", function (event) {
             event.preventDefault()
 
-            const username = document.getElementById("username").value
-            const pw = document.getElementById("pw").value
-
-            //Ambil daftar user yang sudah ada di localStorage (jika belum ada, buat array kosong)
-            const daftarUser = JSON.parse(localStorage.getItem('users')) || [];
             
-            //Cek apakah username sudah dipakai
-            const userAda = daftarUser.some(user => user.username == username)
-
-            if (userAda) {
-                alert("Username sudah terdaftar! Gunakan username lain")
-                return;
-            }
-
-            const userBaru = {
-                username : username,
-                password : pw
-            };
-
-            daftarUser.push(userBaru)
-            localStorage.setItem('users', JSON.stringify(daftarUser))
-
-
             alert("Berhasil daftar")
             window.location.href ="index.html"
-
+            
             daftar.reset()
-
+            
         })
-
-    </script>
+        
+        </script>
 </body>
-
 </html>

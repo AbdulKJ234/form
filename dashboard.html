@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         :root {
             --blue-dark: #202435;
@@ -25,16 +25,20 @@
         }
 
         .sidebar {
+            position: fixed;
+            display: flex;
+            flex-direction: column;
             border-right: 1px solid rgba(186, 186, 186, 0.353);
             background-color: var(--blue-dark);
             height: 100vh;
             width: 18rem;
-            position: fixed;
             padding-top: 20px;
-            display: flex;
-            flex-direction: column;
-
+            left: -100%;
             transition: .5s ease;
+        }
+
+        .sidebar.active {
+            left: 0;
         }
 
 
@@ -95,17 +99,50 @@
 
         }
 
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        i {
+            margin-right: 1rem;
+        }
+
+        footer {
+            margin-top: 13rem;
+            background-color: #28324b;
+            display: flex;
+            justify-content: space-around;
+            padding: 2rem;
+        }
+
     </style>
 </head>
 
 <body>
     <div id="sidebar" class="sidebar">
-        <h2>MyDashboard</h2>
+        <div class="logo">
+            <img src="img/lolokgo.jpeg" alt="ini harusnya logo">
+            <h2>MyDashboard</h2>
+        </div>
         <hr>
-        <a onclick="ubahHalaman('Beranda'); return false;">Home</a>
-        <a onclick="ubahHalaman('Profil'); return false;">Profil</a>
-        <a onclick="ubahHalaman('Galeri'); return false;"> Galler</a>
-        <a onclick="ubahHalaman('kontak'); return false;"> Contact</a>
+        <a onclick="ubahHalaman('Beranda'); return false;">
+            <i class="fa-solid fa-house"></i>
+            Home</a>
+        <a onclick="ubahHalaman('Profil'); return false;">
+            <i class="fa-solid fa-circle-user"></i>
+            Profil</a>
+        <a onclick="ubahHalaman('Galeri'); return false;">
+            <i class="fa-solid fa-image"></i>
+            Gallery</a>
+        <a onclick="ubahHalaman('kontak'); return false;"><i class="fa-solid fa-phone"></i> Contact</a>
     </div>
 
     <div class="konten">
@@ -121,6 +158,12 @@
             </button>
         </div>
     </div>
+
+
+    <footer>
+        <p>INI FOOTER</p>
+        <p>&copy; orang-orang pepekelge 2067</p>
+    </footer>
 
 
 
